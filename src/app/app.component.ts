@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'pwa-demo';
+  jwtToken: any;
+  decoded: any;
+  userName!: string;
+  password!: string;
+  pin!: string;
+  loginForm!: UntypedFormGroup;
+
+  constructor(private _formBuilder: FormBuilder) { 
+    this.loginForm = this._formBuilder.group({
+      userName: new UntypedFormControl(''),
+      password: new UntypedFormControl(''),
+    });
+  }
+
+  login() {
+    this.loginForm.reset();
+  }
 }
