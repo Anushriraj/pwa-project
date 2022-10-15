@@ -19,12 +19,14 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "@angular/service-worker": "^14.2.0",
+    "bootstrap": "^5.2.2",
+    "deploy-pwa": "ng build && npx gh-pages -d dist/pwa-demo",
+    "gh-pages": "^4.0.0",
+    "post-deploy": "npx gh-pages -d dist/pwa-demo",
+    "run-pwa": "ng build && http-server -p 8080 -c-1 dist/pwa-demo",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
-    "zone.js": "~0.11.4",
-    "run-pwa": "ng build && http-server -p 8080 -c-1 dist/pwa-demo",
-    "deploy-pwa": "ng build && npx gh-pages -d dist/pwa-demo",
-    "post-deploy": "npx gh-pages -d dist/pwa-demo"
+    "zone.js": "~0.11.4"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^14.2.3",
